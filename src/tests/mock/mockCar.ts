@@ -9,6 +9,17 @@ const carMock: ICar = {
   seatsQty: 5
 }
 
+const carMockUpdateBefore: ICar  & {_id: string} = {
+  _id: '62cf1fc6498565d94eba52cd',
+  model: "santana",
+  year: 2010,
+  color: "green",
+  buyValue: 28000,
+  doorsQty: 2,
+  seatsQty: 3
+}
+
+
 const carMockUpdate: ICar = {
   model: "ford Ka",
   year: 2000,
@@ -64,4 +75,4 @@ const carMockAllDb: Array<ICar & {_id: string}> = [
 const idValido: string = "62cf1fc6498565d94eba52cd";
 
 
-export {carMock, carMockWithId, carMockAllDb, idValido, carMockUpdate, carMockUpdateWithId}
+export {carMock, carMockWithId, carMockAllDb, idValido, carMockUpdate, carMockUpdateWithId, carMockUpdateBefore}
