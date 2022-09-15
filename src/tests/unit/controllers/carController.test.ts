@@ -33,7 +33,7 @@ describe('Car Model', () => {
   describe('adicionando um novo carro', () => {
     it('criado com sucesso ', async () => {
       req.body = carMock 
-      const car = await carController.create(req, res);
+      await carController.create(req, res);
       expect((res.status as sinon.SinonStub).calledWith(201)).to.be.true;
       expect((res.json as sinon.SinonStub).calledWith(carMockWithId)).to.be.true;
     });
