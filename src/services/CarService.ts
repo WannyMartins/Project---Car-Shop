@@ -14,11 +14,13 @@ export default class CarService implements IService<ICar> {
     const parsed = carZodSchema.safeParse(obj);
     if (!parsed.success) throw parsed.error;
 
-    return this._car.create(obj);
+    const car = await this._car.create(obj);
+    return car;
   }
 
   public async read(): Promise<ICar[]> {
-    return this._car.read();
+    const car = await this._car.read();
+    return car;
   }
 
   public async readOne(_id: string): Promise<ICar> {
