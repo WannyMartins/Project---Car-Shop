@@ -23,13 +23,13 @@ export default class MotorcycleController {
     return res.status(200).json(results);
   }
 
-  // public async update(req: Request, res: Response<IMotorcycle>) {
-  //   const { params, body } = req;
-  //   await this._service.update(params.id, body);
-  //   const result = await this._service.readOne(params.id);
+  public async update(req: Request, res: Response<IMotorcycle>) {
+    const { params, body } = req;
+    await this._service.update(params.id, body);
+    const result = await this._service.readOne(params.id);
     
-  //   return res.status(200).json(result);
-  // }
+    return res.status(200).json(result);
+  }
 
   // public async delete(req: Request, res: Response<IMotorcycle>) {
   //   const { id } = req.params;
