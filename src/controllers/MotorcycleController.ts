@@ -31,9 +31,9 @@ export default class MotorcycleController {
     return res.status(200).json(result);
   }
 
-  // public async delete(req: Request, res: Response<IMotorcycle>) {
-  //   const { id } = req.params;
-  //   await this._service.delete(id);
-  //   return res.sendStatus(204);
-  // }
+  public async delete(req: Request, res: Response<IMotorcycle>) {
+    const { id } = req.params;
+    await this._service.delete(id);
+    return res.sendStatus(204);
+  }
 }
