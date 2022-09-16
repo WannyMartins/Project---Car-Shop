@@ -10,7 +10,7 @@ import CarService from '../../../services/CarService';
 import { carMock, carMockUpdate, carMockUpdateBefore, carMockUpdateWithId, carMockWithId, idValido } from '../../mock/mockCar';
 const { expect } = chai;
 
-describe('Car Model', () => {
+describe('Car Controller', () => {
   const carModel = new CarModel();
   const carService = new CarService(carModel);
   const carController = new CarController(carService);
