@@ -17,11 +17,11 @@ export default class MotorcycleController {
     return res.status(200).json(results);
   }
 
-  // public async readOne(req: Request, res: Response<IMotorcycle>) {
-  //   const { id } = req.params;
-  //   const results = await this._service.readOne(id);
-  //   return res.status(200).json(results);
-  // }
+  public async readOne(req: Request, res: Response<IMotorcycle>) {
+    const { id } = req.params;
+    const results = await this._service.readOne(id);
+    return res.status(200).json(results);
+  }
 
   // public async update(req: Request, res: Response<IMotorcycle>) {
   //   const { params, body } = req;
