@@ -25,6 +25,7 @@ describe('Car Model', () => {
     sinon.stub(carService, 'update').resolves(carMockUpdateWithId);
     sinon.stub(carService, 'delete').resolves(carMockWithId);
     
+    res.sendStatus = sinon.stub().returns(res);
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
   
@@ -74,7 +75,7 @@ describe('Car Model', () => {
     it('deletado com sucesso', async () => {
       req.params = { id: carMockWithId._id}
       await carController.delete(req, res);
-      expect((res.status as sinon.SinonStub).calledWith(204)).to.be.true;
+      expect((res.sendStatus as sinon.SinonStub).calledWith(204)).to.be.true;
     });
   })
 
